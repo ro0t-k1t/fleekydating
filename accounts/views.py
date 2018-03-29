@@ -625,26 +625,26 @@ def search_titles(request):
 
 
 
-    """#Gay man seeking man
+    """#man seeking man
     if request.user.seeking == 'Male' and request.user.gender == 'Male':
 
         users = User.objects.filter(Q(first_name__contains=search_text) & Q(gender='Male') & Q(seeking='Male')).exclude(id=request.user.id)
 
 
 
-    #Straight man seeking woman
+    #man seeking woman
     elif request.user.seeking == 'Female' and request.user.gender == 'Male':
 
         users = User.objects.filter(Q(first_name__contains=search_text) & Q(gender='Female') & Q(seeking='Male')).exclude(id=request.user.id)
 
 
-    #Straight woman seeking man
+    #woman seeking man
     elif request.user.seeking == 'Male' and request.user.gender == 'Female':
 
         users = User.objects.filter(Q(gender='Male') & Q(seeking='Female')).exclude(id=request.user.id)
 
 
-    #Gay woman seeking woman
+    #woman seeking woman
     elif request.user.seeking == 'Female' and request.user.gender == 'Female':
 
         users = User.objects.filter(Q(first_name__contains=search_text) & Q(gender='Female') & Q(seeking='Female')).exclude(id=request.user.id)"""
@@ -833,7 +833,7 @@ def users(request):
 
     whichuser = request.user
 
-    #Gay man seeking man
+    #man seeking man
     if request.user.seeking == 'Male' and request.user.gender == 'Male':
 
         number_users = User.objects.filter(gender='Male').count()
@@ -842,7 +842,7 @@ def users(request):
 
 
 
-    #Straight man seeking woman
+    #man seeking woman
     elif request.user.seeking == 'Female' and request.user.gender == 'Male':
 
         number_users = User.objects.filter(gender='Female').count()
@@ -850,7 +850,7 @@ def users(request):
         users = User.objects.filter(Q(gender='Female') & Q(seeking='Male')).exclude(Q(id=request.user.id) | Q(id__in=crushes) | Q(id__in=crushes2))
 
 
-    #Straight woman seeking man
+    #woman seeking man
     elif request.user.seeking == 'Male' and request.user.gender == 'Female':
 
         number_users = User.objects.filter(gender='Male').count()
@@ -858,7 +858,7 @@ def users(request):
         users = User.objects.filter(Q(gender='Male') & Q(seeking='Female')).exclude(Q(id=request.user.id) | Q(id__in=crushes) | Q(id__in=crushes2))
 
 
-    #Gay woman seeking woman
+    #woman seeking woman
     elif request.user.seeking == 'Female' and request.user.gender == 'Female':
 
         number_users = User.objects.filter(gender='Female').count()
