@@ -10,7 +10,7 @@ ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'ronanhiggins8@gmail.com'
-EMAIL_HOST_PASSWORD = 'xuxrboueungkgbll'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
@@ -71,7 +71,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'fleekydb',
         'USER': 'ronan',
-        'PASSWORD': 'apple',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432',
     }
