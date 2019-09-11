@@ -86,7 +86,7 @@
 
             }
 
-            var fleek = {{ fleekyvalue }};
+            var fleek = {{ fleekyvalue|default:"0" }};
 
 
             var userid = {{ request.user.id }};
